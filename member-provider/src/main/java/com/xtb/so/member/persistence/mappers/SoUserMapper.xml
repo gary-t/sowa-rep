@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xtb.so.member.persistence.mappers.SoUserMapper">
+	<resultMap type="com.xtb.so.member.persistence.entities.SoUser" id="SoUser">
+		<result property="userId" column="user_id" />
+		<result property="userCode" column="user_code" />
+		<result property="userName" column="user_name" />
+		<result property="userPassword" column="user_password" />
+		<result property="userStatus" column="user_status" />
+		<result property="certId" column="cert_id" />
+		<result property="mobile" column="mobile" />
+		<result property="nickname" column="nickname" />
+		<result property="email" column="email" />
+		<result property="province" column="province" />
+		<result property="city" column="city" />
+		<result property="area" column="area" />
+		<result property="address" column="address" />
+		<result property="telephone" column="telephone" />
+		<result property="img" column="img" />
+		<result property="company" column="company" />
+		<result property="department" column="department" />
+		<result property="profession" column="profession" />
+		<result property="position" column="position" />
+		<result property="industry" column="industry" />
+		<result property="worklife" column="worklife" />
+		<result property="personalnote" column="personalnote" />
+		<result property="source" column="source" />
+		<result property="remark" column="remark" />
+		<result property="extend1" column="extend1" />
+		<result property="extend2" column="extend2" />
+		<result property="extend3" column="extend3" />
+		<result property="extend4" column="extend4" />
+		<result property="extend5" column="extend5" />
+		<result property="extend6" column="extend6" />
+		<result property="extend7" column="extend7" />
+		<result property="extend8" column="extend8" />
+		<result property="extend9" column="extend9" />
+		<result property="extend10" column="extend10" />
+		<result property="valid" column="valid" />
+		<result property="createUser" column="create_user" />
+		<result property="createDate" column="create_date" />
+		<result property="updateUser" column="update_user" />
+		<result property="updateDate" column="update_date" />
+		<result property="auditUser" column="audit_user" />
+		<result property="auditDate" column="audit_date" />
+			</resultMap> 
+	
+	<select id="queryRecords" resultType="java.util.HashMap" parameterType="hashmap">
+	select
+			  user_id as "userId" 
+			 ,   user_code as "userCode" 
+			 ,   user_name as "userName" 
+			 ,   user_password as "userPassword" 
+			 ,   user_status as "userStatus" 
+			 ,   cert_id as "certId" 
+			 ,   mobile as "mobile" 
+			 ,   nickname as "nickname" 
+			 ,   email as "email" 
+			 ,   province as "province" 
+			 ,   city as "city" 
+			 ,   area as "area" 
+			 ,   address as "address" 
+			 ,   telephone as "telephone" 
+			 ,   img as "img" 
+			 ,   company as "company" 
+			 ,   department as "department" 
+			 ,   profession as "profession" 
+			 ,   position as "position" 
+			 ,   industry as "industry" 
+			 ,   worklife as "worklife" 
+			 ,   personalnote as "personalnote" 
+			 ,   source as "source" 
+			 ,   remark as "remark" 
+			 ,   extend1 as "extend1" 
+			 ,   extend2 as "extend2" 
+			 ,   extend3 as "extend3" 
+			 ,   extend4 as "extend4" 
+			 ,   extend5 as "extend5" 
+			 ,   extend6 as "extend6" 
+			 ,   extend7 as "extend7" 
+			 ,   extend8 as "extend8" 
+			 ,   extend9 as "extend9" 
+			 ,   extend10 as "extend10" 
+			 ,   valid as "valid" 
+			 ,   create_user as "createUser" 
+			 ,   create_date as "createDate" 
+			 ,   update_user as "updateUser" 
+			 ,   update_date as "updateDate" 
+			 ,   audit_user as "auditUser" 
+			 ,   audit_date as "auditDate" 
+			from t_so_user
+	where
+		valid='1'
+		<if test="userId!=null and userId!=''">and  user_id=#{userId}</if>
+		<if test="userCode!=null and userCode!=''">and  user_code=#{userCode}</if>
+		<if test="userName!=null and userName!=''">and  user_name=#{userName}</if>
+		<if test="userPassword!=null and userPassword!=''">and  user_password=#{userPassword}</if>
+		<if test="userStatus!=null and userStatus!=''">and  user_status=#{userStatus}</if>
+		<if test="certId!=null and certId!=''">and  cert_id=#{certId}</if>
+		<if test="mobile!=null and mobile!=''">and  mobile=#{mobile}</if>
+		<if test="nickname!=null and nickname!=''">and  nickname=#{nickname}</if>
+		<if test="email!=null and email!=''">and  email=#{email}</if>
+		<if test="province!=null and province!=''">and  province=#{province}</if>
+		<if test="city!=null and city!=''">and  city=#{city}</if>
+		<if test="area!=null and area!=''">and  area=#{area}</if>
+		<if test="address!=null and address!=''">and  address=#{address}</if>
+		<if test="telephone!=null and telephone!=''">and  telephone=#{telephone}</if>
+		<if test="img!=null and img!=''">and  img=#{img}</if>
+		<if test="company!=null and company!=''">and  company=#{company}</if>
+		<if test="department!=null and department!=''">and  department=#{department}</if>
+		<if test="profession!=null and profession!=''">and  profession=#{profession}</if>
+		<if test="position!=null and position!=''">and  position=#{position}</if>
+		<if test="industry!=null and industry!=''">and  industry=#{industry}</if>
+		<if test="worklife!=null and worklife!=''">and  worklife=#{worklife}</if>
+		<if test="personalnote!=null and personalnote!=''">and  personalnote=#{personalnote}</if>
+		<if test="source!=null and source!=''">and  source=#{source}</if>
+		<if test="remark!=null and remark!=''">and  remark=#{remark}</if>
+		<if test="extend1!=null and extend1!=''">and  extend1=#{extend1}</if>
+		<if test="extend2!=null and extend2!=''">and  extend2=#{extend2}</if>
+		<if test="extend3!=null and extend3!=''">and  extend3=#{extend3}</if>
+		<if test="extend4!=null and extend4!=''">and  extend4=#{extend4}</if>
+		<if test="extend5!=null and extend5!=''">and  extend5=#{extend5}</if>
+		<if test="extend6!=null and extend6!=''">and  extend6=#{extend6}</if>
+		<if test="extend7!=null and extend7!=''">and  extend7=#{extend7}</if>
+		<if test="extend8!=null and extend8!=''">and  extend8=#{extend8}</if>
+		<if test="extend9!=null and extend9!=''">and  extend9=#{extend9}</if>
+		<if test="extend10!=null and extend10!=''">and  extend10=#{extend10}</if>
+		<if test="valid!=null and valid!=''">and  valid=#{valid}</if>
+		<if test="createUser!=null and createUser!=''">and  create_user=#{createUser}</if>
+		<if test="createDate!=null and createDate!=''">and  create_date=#{createDate}</if>
+		<if test="updateUser!=null and updateUser!=''">and  update_user=#{updateUser}</if>
+		<if test="updateDate!=null and updateDate!=''">and  update_date=#{updateDate}</if>
+		<if test="auditUser!=null and auditUser!=''">and  audit_user=#{auditUser}</if>
+		<if test="auditDate!=null and auditDate!=''">and  audit_date=#{auditDate}</if>
+			</select>
+	
+	<select id="queryByEntitys" resultMap="SoUser" parameterType="com.xtb.so.member.persistence.entities.SoUser">
+		select * from t_so_user
+		where
+			 valid='1'
+			<if test="userId!=null and userId!=''">and  user_id=#{userId}</if>
+			<if test="userCode!=null and userCode!=''">and  user_code=#{userCode}</if>
+			<if test="userName!=null and userName!=''">and  user_name=#{userName}</if>
+			<if test="userPassword!=null and userPassword!=''">and  user_password=#{userPassword}</if>
+			<if test="userStatus!=null and userStatus!=''">and  user_status=#{userStatus}</if>
+			<if test="certId!=null and certId!=''">and  cert_id=#{certId}</if>
+			<if test="mobile!=null and mobile!=''">and  mobile=#{mobile}</if>
+			<if test="nickname!=null and nickname!=''">and  nickname=#{nickname}</if>
+			<if test="email!=null and email!=''">and  email=#{email}</if>
+			<if test="province!=null and province!=''">and  province=#{province}</if>
+			<if test="city!=null and city!=''">and  city=#{city}</if>
+			<if test="area!=null and area!=''">and  area=#{area}</if>
+			<if test="address!=null and address!=''">and  address=#{address}</if>
+			<if test="telephone!=null and telephone!=''">and  telephone=#{telephone}</if>
+			<if test="img!=null and img!=''">and  img=#{img}</if>
+			<if test="company!=null and company!=''">and  company=#{company}</if>
+			<if test="department!=null and department!=''">and  department=#{department}</if>
+			<if test="profession!=null and profession!=''">and  profession=#{profession}</if>
+			<if test="position!=null and position!=''">and  position=#{position}</if>
+			<if test="industry!=null and industry!=''">and  industry=#{industry}</if>
+			<if test="worklife!=null and worklife!=''">and  worklife=#{worklife}</if>
+			<if test="personalnote!=null and personalnote!=''">and  personalnote=#{personalnote}</if>
+			<if test="source!=null and source!=''">and  source=#{source}</if>
+			<if test="remark!=null and remark!=''">and  remark=#{remark}</if>
+			<if test="extend1!=null and extend1!=''">and  extend1=#{extend1}</if>
+			<if test="extend2!=null and extend2!=''">and  extend2=#{extend2}</if>
+			<if test="extend3!=null and extend3!=''">and  extend3=#{extend3}</if>
+			<if test="extend4!=null and extend4!=''">and  extend4=#{extend4}</if>
+			<if test="extend5!=null and extend5!=''">and  extend5=#{extend5}</if>
+			<if test="extend6!=null and extend6!=''">and  extend6=#{extend6}</if>
+			<if test="extend7!=null and extend7!=''">and  extend7=#{extend7}</if>
+			<if test="extend8!=null and extend8!=''">and  extend8=#{extend8}</if>
+			<if test="extend9!=null and extend9!=''">and  extend9=#{extend9}</if>
+			<if test="extend10!=null and extend10!=''">and  extend10=#{extend10}</if>
+			<if test="valid!=null and valid!=''">and  valid=#{valid}</if>
+			<if test="createUser!=null and createUser!=''">and  create_user=#{createUser}</if>
+			<if test="createDate!=null and createDate!=''">and  create_date=#{createDate}</if>
+			<if test="updateUser!=null and updateUser!=''">and  update_user=#{updateUser}</if>
+			<if test="updateDate!=null and updateDate!=''">and  update_date=#{updateDate}</if>
+			<if test="auditUser!=null and auditUser!=''">and  audit_user=#{auditUser}</if>
+			<if test="auditDate!=null and auditDate!=''">and  audit_date=#{auditDate}</if>
+				</select>
+	
+	<select id="findByPrimaryKey" resultMap="SoUser">
+		select *
+		from t_so_user
+		where valid='1'
+		and user_id=#{userId}
+	</select>
+	
+	<select id="countRecords" resultType="int" parameterType="hashmap">
+		select
+		count(*) from t_so_user 
+		where
+		 valid='1'
+			<if test="userId!=null and userId!=''">and  user_id=#{userId}</if>
+			<if test="userCode!=null and userCode!=''">and  user_code=#{userCode}</if>
+			<if test="userName!=null and userName!=''">and  user_name=#{userName}</if>
+			<if test="userPassword!=null and userPassword!=''">and  user_password=#{userPassword}</if>
+			<if test="userStatus!=null and userStatus!=''">and  user_status=#{userStatus}</if>
+			<if test="certId!=null and certId!=''">and  cert_id=#{certId}</if>
+			<if test="mobile!=null and mobile!=''">and  mobile=#{mobile}</if>
+			<if test="nickname!=null and nickname!=''">and  nickname=#{nickname}</if>
+			<if test="email!=null and email!=''">and  email=#{email}</if>
+			<if test="province!=null and province!=''">and  province=#{province}</if>
+			<if test="city!=null and city!=''">and  city=#{city}</if>
+			<if test="area!=null and area!=''">and  area=#{area}</if>
+			<if test="address!=null and address!=''">and  address=#{address}</if>
+			<if test="telephone!=null and telephone!=''">and  telephone=#{telephone}</if>
+			<if test="img!=null and img!=''">and  img=#{img}</if>
+			<if test="company!=null and company!=''">and  company=#{company}</if>
+			<if test="department!=null and department!=''">and  department=#{department}</if>
+			<if test="profession!=null and profession!=''">and  profession=#{profession}</if>
+			<if test="position!=null and position!=''">and  position=#{position}</if>
+			<if test="industry!=null and industry!=''">and  industry=#{industry}</if>
+			<if test="worklife!=null and worklife!=''">and  worklife=#{worklife}</if>
+			<if test="personalnote!=null and personalnote!=''">and  personalnote=#{personalnote}</if>
+			<if test="source!=null and source!=''">and  source=#{source}</if>
+			<if test="remark!=null and remark!=''">and  remark=#{remark}</if>
+			<if test="extend1!=null and extend1!=''">and  extend1=#{extend1}</if>
+			<if test="extend2!=null and extend2!=''">and  extend2=#{extend2}</if>
+			<if test="extend3!=null and extend3!=''">and  extend3=#{extend3}</if>
+			<if test="extend4!=null and extend4!=''">and  extend4=#{extend4}</if>
+			<if test="extend5!=null and extend5!=''">and  extend5=#{extend5}</if>
+			<if test="extend6!=null and extend6!=''">and  extend6=#{extend6}</if>
+			<if test="extend7!=null and extend7!=''">and  extend7=#{extend7}</if>
+			<if test="extend8!=null and extend8!=''">and  extend8=#{extend8}</if>
+			<if test="extend9!=null and extend9!=''">and  extend9=#{extend9}</if>
+			<if test="extend10!=null and extend10!=''">and  extend10=#{extend10}</if>
+			<if test="valid!=null and valid!=''">and  valid=#{valid}</if>
+			<if test="createUser!=null and createUser!=''">and  create_user=#{createUser}</if>
+			<if test="createDate!=null and createDate!=''">and  create_date=#{createDate}</if>
+			<if test="updateUser!=null and updateUser!=''">and  update_user=#{updateUser}</if>
+			<if test="updateDate!=null and updateDate!=''">and  update_date=#{updateDate}</if>
+			<if test="auditUser!=null and auditUser!=''">and  audit_user=#{auditUser}</if>
+			<if test="auditDate!=null and auditDate!=''">and  audit_date=#{auditDate}</if>
+				</select>
+	
+	<update id="updateRecord" parameterType="com.xtb.so.member.persistence.entities.SoUser">
+		update t_so_user
+		<set>
+		         user_id=#{userId}
+				<if test="userName!=null">,user_name = #{userName}</if>
+				<if test="userPassword!=null">,user_password = #{userPassword}</if>
+				<if test="userStatus!=null">,user_status = #{userStatus}</if>
+				<if test="certId!=null">,cert_id = #{certId}</if>
+				<if test="mobile!=null">,mobile = #{mobile}</if>
+				<if test="nickname!=null">,nickname = #{nickname}</if>
+				<if test="email!=null">,email = #{email}</if>
+				<if test="province!=null">,province = #{province}</if>
+				<if test="city!=null">,city = #{city}</if>
+				<if test="area!=null">,area = #{area}</if>
+				<if test="address!=null">,address = #{address}</if>
+				<if test="telephone!=null">,telephone = #{telephone}</if>
+				<if test="img!=null">,img = #{img}</if>
+				<if test="company!=null">,company = #{company}</if>
+				<if test="department!=null">,department = #{department}</if>
+				<if test="profession!=null">,profession = #{profession}</if>
+				<if test="position!=null">,position = #{position}</if>
+				<if test="industry!=null">,industry = #{industry}</if>
+				<if test="worklife!=null">,worklife = #{worklife}</if>
+				<if test="personalnote!=null">,personalnote = #{personalnote}</if>
+				<if test="source!=null">,source = #{source}</if>
+				<if test="remark!=null">,remark = #{remark}</if>
+				<if test="extend1!=null">,extend1 = #{extend1}</if>
+				<if test="extend2!=null">,extend2 = #{extend2}</if>
+				<if test="extend3!=null">,extend3 = #{extend3}</if>
+				<if test="extend4!=null">,extend4 = #{extend4}</if>
+				<if test="extend5!=null">,extend5 = #{extend5}</if>
+				<if test="extend6!=null">,extend6 = #{extend6}</if>
+				<if test="extend7!=null">,extend7 = #{extend7}</if>
+				<if test="extend8!=null">,extend8 = #{extend8}</if>
+				<if test="extend9!=null">,extend9 = #{extend9}</if>
+				<if test="extend10!=null">,extend10 = #{extend10}</if>
+				<if test="valid!=null">,valid = #{valid}</if>
+				<if test="createUser!=null">,create_user = #{createUser}</if>
+				<if test="createDate!=null">,create_date = #{createDate}</if>
+				<if test="updateUser!=null">,update_user = #{updateUser}</if>
+				<if test="updateDate!=null">,update_date = #{updateDate}</if>
+				<if test="auditUser!=null">,audit_user = #{auditUser}</if>
+				<if test="auditDate!=null">,audit_date = #{auditDate}</if>
+		</set>
+		where valid='1'
+		and user_id=#{userId}
+	</update>
+	
+	<insert id="insertRecord" parameterType="com.xtb.so.member.persistence.entities.SoUser" >
+		insert  into t_so_user (				user_id
+						,user_code
+						,user_name
+						,user_password
+						,user_status
+						,cert_id
+						,mobile
+						,nickname
+						,email
+						,province
+						,city
+						,area
+						,address
+						,telephone
+						,img
+						,company
+						,department
+						,profession
+						,position
+						,industry
+						,worklife
+						,personalnote
+						,source
+						,remark
+						,extend1
+						,extend2
+						,extend3
+						,extend4
+						,extend5
+						,extend6
+						,extend7
+						,extend8
+						,extend9
+						,extend10
+						,valid
+						,create_user
+						,create_date
+						,update_user
+						,update_date
+						,audit_user
+						,audit_date
+						)
+		values(		#{userId}
+						,#{userCode}
+						,#{userName}
+						,#{userPassword}
+						,#{userStatus}
+						,#{certId}
+						,#{mobile}
+						,#{nickname}
+						,#{email}
+						,#{province}
+						,#{city}
+						,#{area}
+						,#{address}
+						,#{telephone}
+						,#{img}
+						,#{company}
+						,#{department}
+						,#{profession}
+						,#{position}
+						,#{industry}
+						,#{worklife}
+						,#{personalnote}
+						,#{source}
+						,#{remark}
+						,#{extend1}
+						,#{extend2}
+						,#{extend3}
+						,#{extend4}
+						,#{extend5}
+						,#{extend6}
+						,#{extend7}
+						,#{extend8}
+						,#{extend9}
+						,#{extend10}
+						,#{valid}
+						,#{createUser}
+						,#{createDate}
+						,#{updateUser}
+						,#{updateDate}
+						,#{auditUser}
+						,#{auditDate}
+				)
+	</insert>
+	
+	<update id="deleteRecord" parameterType="com.xtb.so.member.persistence.entities.SoUser">
+	update t_so_user
+		<set>
+		valid='0'
+ 		,UPDATE_USER = #{updateUser}
+		,UPDATE_DATE = SYSDATE()
+		</set> 
+	where
+		valid='1'
+		<if test="userId!=null and userId!=''">and  user_id=#{userId}</if>
+		<if test="userCode!=null and userCode!=''">and  user_code=#{userCode}</if>
+		<if test="userName!=null and userName!=''">and  user_name=#{userName}</if>
+		<if test="userPassword!=null and userPassword!=''">and  user_password=#{userPassword}</if>
+		<if test="userStatus!=null and userStatus!=''">and  user_status=#{userStatus}</if>
+		<if test="certId!=null and certId!=''">and  cert_id=#{certId}</if>
+		<if test="mobile!=null and mobile!=''">and  mobile=#{mobile}</if>
+		<if test="nickname!=null and nickname!=''">and  nickname=#{nickname}</if>
+		<if test="email!=null and email!=''">and  email=#{email}</if>
+		<if test="province!=null and province!=''">and  province=#{province}</if>
+		<if test="city!=null and city!=''">and  city=#{city}</if>
+		<if test="area!=null and area!=''">and  area=#{area}</if>
+		<if test="address!=null and address!=''">and  address=#{address}</if>
+		<if test="telephone!=null and telephone!=''">and  telephone=#{telephone}</if>
+		<if test="img!=null and img!=''">and  img=#{img}</if>
+		<if test="company!=null and company!=''">and  company=#{company}</if>
+		<if test="department!=null and department!=''">and  department=#{department}</if>
+		<if test="profession!=null and profession!=''">and  profession=#{profession}</if>
+		<if test="position!=null and position!=''">and  position=#{position}</if>
+		<if test="industry!=null and industry!=''">and  industry=#{industry}</if>
+		<if test="worklife!=null and worklife!=''">and  worklife=#{worklife}</if>
+		<if test="personalnote!=null and personalnote!=''">and  personalnote=#{personalnote}</if>
+		<if test="source!=null and source!=''">and  source=#{source}</if>
+		<if test="remark!=null and remark!=''">and  remark=#{remark}</if>
+		<if test="extend1!=null and extend1!=''">and  extend1=#{extend1}</if>
+		<if test="extend2!=null and extend2!=''">and  extend2=#{extend2}</if>
+		<if test="extend3!=null and extend3!=''">and  extend3=#{extend3}</if>
+		<if test="extend4!=null and extend4!=''">and  extend4=#{extend4}</if>
+		<if test="extend5!=null and extend5!=''">and  extend5=#{extend5}</if>
+		<if test="extend6!=null and extend6!=''">and  extend6=#{extend6}</if>
+		<if test="extend7!=null and extend7!=''">and  extend7=#{extend7}</if>
+		<if test="extend8!=null and extend8!=''">and  extend8=#{extend8}</if>
+		<if test="extend9!=null and extend9!=''">and  extend9=#{extend9}</if>
+		<if test="extend10!=null and extend10!=''">and  extend10=#{extend10}</if>
+		<if test="valid!=null and valid!=''">and  valid=#{valid}</if>
+		<if test="createUser!=null and createUser!=''">and  create_user=#{createUser}</if>
+		<if test="createDate!=null and createDate!=''">and  create_date=#{createDate}</if>
+		<if test="updateUser!=null and updateUser!=''">and  update_user=#{updateUser}</if>
+		<if test="updateDate!=null and updateDate!=''">and  update_date=#{updateDate}</if>
+		<if test="auditUser!=null and auditUser!=''">and  audit_user=#{auditUser}</if>
+		<if test="auditDate!=null and auditDate!=''">and  audit_date=#{auditDate}</if>
+			</update>
+
+	<update id="deleteRecordByKey">
+		update t_so_user
+			<set>
+			valid='0'
+	 		,UPDATE_USER = #{updateUser}
+			,UPDATE_DATE = SYSDATE()
+			</set> 
+		where
+		 user_id=#{userId} 
+	</update>
+</mapper>

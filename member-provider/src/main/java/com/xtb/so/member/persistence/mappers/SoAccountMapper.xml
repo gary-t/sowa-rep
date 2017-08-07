@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xtb.so.member.persistence.mappers.SoAccountMapper">
+	<resultMap type="com.xtb.so.member.persistence.entities.SoAccount" id="SoAccount">
+		<result property="accountId" column="account_id" />
+		<result property="account" column="account" />
+		<result property="accountType" column="account_type" />
+		<result property="userId" column="user_id" />
+		<result property="isPersonal" column="is_personal" />
+		<result property="remark" column="remark" />
+		<result property="extend1" column="extend1" />
+		<result property="extend2" column="extend2" />
+		<result property="extend3" column="extend3" />
+		<result property="extend4" column="extend4" />
+		<result property="extend5" column="extend5" />
+		<result property="extend6" column="extend6" />
+		<result property="extend7" column="extend7" />
+		<result property="extend8" column="extend8" />
+		<result property="extend9" column="extend9" />
+		<result property="extend10" column="extend10" />
+		<result property="valid" column="valid" />
+		<result property="createUser" column="create_user" />
+		<result property="createDate" column="create_date" />
+		<result property="updateUser" column="update_user" />
+		<result property="updateDate" column="update_date" />
+			</resultMap> 
+	
+	<select id="queryRecords" resultType="java.util.HashMap" parameterType="hashmap">
+	select
+			  account_id as "accountId" 
+			 ,   account as "account" 
+			 ,   account_type as "accountType" 
+			 ,   user_id as "userId" 
+			 ,   is_personal as "isPersonal" 
+			 ,   remark as "remark" 
+			 ,   extend1 as "extend1" 
+			 ,   extend2 as "extend2" 
+			 ,   extend3 as "extend3" 
+			 ,   extend4 as "extend4" 
+			 ,   extend5 as "extend5" 
+			 ,   extend6 as "extend6" 
+			 ,   extend7 as "extend7" 
+			 ,   extend8 as "extend8" 
+			 ,   extend9 as "extend9" 
+			 ,   extend10 as "extend10" 
+			 ,   valid as "valid" 
+			 ,   create_user as "createUser" 
+			 ,   create_date as "createDate" 
+			 ,   update_user as "updateUser" 
+			 ,   update_date as "updateDate" 
+			from t_so_account
+	where
+		valid='1'
+		<if test="accountId!=null and accountId!=''">and  account_id=#{accountId}</if>
+		<if test="account!=null and account!=''">and  account=#{account}</if>
+		<if test="accountType!=null and accountType!=''">and  account_type=#{accountType}</if>
+		<if test="userId!=null and userId!=''">and  user_id=#{userId}</if>
+		<if test="isPersonal!=null and isPersonal!=''">and  is_personal=#{isPersonal}</if>
+		<if test="remark!=null and remark!=''">and  remark=#{remark}</if>
+		<if test="extend1!=null and extend1!=''">and  extend1=#{extend1}</if>
+		<if test="extend2!=null and extend2!=''">and  extend2=#{extend2}</if>
+		<if test="extend3!=null and extend3!=''">and  extend3=#{extend3}</if>
+		<if test="extend4!=null and extend4!=''">and  extend4=#{extend4}</if>
+		<if test="extend5!=null and extend5!=''">and  extend5=#{extend5}</if>
+		<if test="extend6!=null and extend6!=''">and  extend6=#{extend6}</if>
+		<if test="extend7!=null and extend7!=''">and  extend7=#{extend7}</if>
+		<if test="extend8!=null and extend8!=''">and  extend8=#{extend8}</if>
+		<if test="extend9!=null and extend9!=''">and  extend9=#{extend9}</if>
+		<if test="extend10!=null and extend10!=''">and  extend10=#{extend10}</if>
+		<if test="valid!=null and valid!=''">and  valid=#{valid}</if>
+		<if test="createUser!=null and createUser!=''">and  create_user=#{createUser}</if>
+		<if test="createDate!=null and createDate!=''">and  create_date=#{createDate}</if>
+		<if test="updateUser!=null and updateUser!=''">and  update_user=#{updateUser}</if>
+		<if test="updateDate!=null and updateDate!=''">and  update_date=#{updateDate}</if>
+			</select>
+	
+	<select id="queryByEntitys" resultMap="SoAccount" parameterType="com.xtb.so.member.persistence.entities.SoAccount">
+		select * from t_so_account
+		where
+			 valid='1'
+			<if test="accountId!=null and accountId!=''">and  account_id=#{accountId}</if>
+			<if test="account!=null and account!=''">and  account=#{account}</if>
+			<if test="accountType!=null and accountType!=''">and  account_type=#{accountType}</if>
+			<if test="userId!=null and userId!=''">and  user_id=#{userId}</if>
+			<if test="isPersonal!=null and isPersonal!=''">and  is_personal=#{isPersonal}</if>
+			<if test="remark!=null and remark!=''">and  remark=#{remark}</if>
+			<if test="extend1!=null and extend1!=''">and  extend1=#{extend1}</if>
+			<if test="extend2!=null and extend2!=''">and  extend2=#{extend2}</if>
+			<if test="extend3!=null and extend3!=''">and  extend3=#{extend3}</if>
+			<if test="extend4!=null and extend4!=''">and  extend4=#{extend4}</if>
+			<if test="extend5!=null and extend5!=''">and  extend5=#{extend5}</if>
+			<if test="extend6!=null and extend6!=''">and  extend6=#{extend6}</if>
+			<if test="extend7!=null and extend7!=''">and  extend7=#{extend7}</if>
+			<if test="extend8!=null and extend8!=''">and  extend8=#{extend8}</if>
+			<if test="extend9!=null and extend9!=''">and  extend9=#{extend9}</if>
+			<if test="extend10!=null and extend10!=''">and  extend10=#{extend10}</if>
+			<if test="valid!=null and valid!=''">and  valid=#{valid}</if>
+			<if test="createUser!=null and createUser!=''">and  create_user=#{createUser}</if>
+			<if test="createDate!=null and createDate!=''">and  create_date=#{createDate}</if>
+			<if test="updateUser!=null and updateUser!=''">and  update_user=#{updateUser}</if>
+			<if test="updateDate!=null and updateDate!=''">and  update_date=#{updateDate}</if>
+				</select>
+	
+	<select id="findByPrimaryKey" resultMap="SoAccount">
+		select *
+		from t_so_account
+		where valid='1'
+		and account_id=#{accountId} 
+	</select>
+	
+	<select id="countRecords" resultType="int" parameterType="hashmap">
+		select
+		count(*) from t_so_account 
+		where
+		 valid='1'
+			<if test="accountId!=null and accountId!=''">and  account_id=#{accountId}</if>
+			<if test="account!=null and account!=''">and  account=#{account}</if>
+			<if test="accountType!=null and accountType!=''">and  account_type=#{accountType}</if>
+			<if test="userId!=null and userId!=''">and  user_id=#{userId}</if>
+			<if test="isPersonal!=null and isPersonal!=''">and  is_personal=#{isPersonal}</if>
+			<if test="remark!=null and remark!=''">and  remark=#{remark}</if>
+			<if test="extend1!=null and extend1!=''">and  extend1=#{extend1}</if>
+			<if test="extend2!=null and extend2!=''">and  extend2=#{extend2}</if>
+			<if test="extend3!=null and extend3!=''">and  extend3=#{extend3}</if>
+			<if test="extend4!=null and extend4!=''">and  extend4=#{extend4}</if>
+			<if test="extend5!=null and extend5!=''">and  extend5=#{extend5}</if>
+			<if test="extend6!=null and extend6!=''">and  extend6=#{extend6}</if>
+			<if test="extend7!=null and extend7!=''">and  extend7=#{extend7}</if>
+			<if test="extend8!=null and extend8!=''">and  extend8=#{extend8}</if>
+			<if test="extend9!=null and extend9!=''">and  extend9=#{extend9}</if>
+			<if test="extend10!=null and extend10!=''">and  extend10=#{extend10}</if>
+			<if test="valid!=null and valid!=''">and  valid=#{valid}</if>
+			<if test="createUser!=null and createUser!=''">and  create_user=#{createUser}</if>
+			<if test="createDate!=null and createDate!=''">and  create_date=#{createDate}</if>
+			<if test="updateUser!=null and updateUser!=''">and  update_user=#{updateUser}</if>
+			<if test="updateDate!=null and updateDate!=''">and  update_date=#{updateDate}</if>
+				</select>
+	
+	<update id="updateRecord" parameterType="com.xtb.so.member.persistence.entities.SoAccount">
+		update t_so_account
+		<set>
+		         account_id=#{accountId}
+				<if test="accountType!=null">,account_type = #{accountType}</if>
+				<if test="userId!=null">,user_id = #{userId}</if>
+				<if test="isPersonal!=null">,is_personal = #{isPersonal}</if>
+				<if test="remark!=null">,remark = #{remark}</if>
+				<if test="extend1!=null">,extend1 = #{extend1}</if>
+				<if test="extend2!=null">,extend2 = #{extend2}</if>
+				<if test="extend3!=null">,extend3 = #{extend3}</if>
+				<if test="extend4!=null">,extend4 = #{extend4}</if>
+				<if test="extend5!=null">,extend5 = #{extend5}</if>
+				<if test="extend6!=null">,extend6 = #{extend6}</if>
+				<if test="extend7!=null">,extend7 = #{extend7}</if>
+				<if test="extend8!=null">,extend8 = #{extend8}</if>
+				<if test="extend9!=null">,extend9 = #{extend9}</if>
+				<if test="extend10!=null">,extend10 = #{extend10}</if>
+				<if test="valid!=null">,valid = #{valid}</if>
+				<if test="createUser!=null">,create_user = #{createUser}</if>
+				<if test="createDate!=null">,create_date = #{createDate}</if>
+				<if test="updateUser!=null">,update_user = #{updateUser}</if>
+				<if test="updateDate!=null">,update_date = #{updateDate}</if>
+		</set>
+			where valid='1'
+			and	account_id=#{accountId} 
+	</update>
+	
+	<insert id="insertRecord" parameterType="com.xtb.so.member.persistence.entities.SoAccount" >
+		insert  into t_so_account (				account_id
+						,account
+						,account_type
+						,user_id
+						,is_personal
+						,remark
+						,extend1
+						,extend2
+						,extend3
+						,extend4
+						,extend5
+						,extend6
+						,extend7
+						,extend8
+						,extend9
+						,extend10
+						,valid
+						,create_user
+						,create_date
+						,update_user
+						,update_date
+						)
+		values(		#{accountId}
+						,#{account}
+						,#{accountType}
+						,#{userId}
+						,#{isPersonal}
+						,#{remark}
+						,#{extend1}
+						,#{extend2}
+						,#{extend3}
+						,#{extend4}
+						,#{extend5}
+						,#{extend6}
+						,#{extend7}
+						,#{extend8}
+						,#{extend9}
+						,#{extend10}
+						,#{valid}
+						,#{createUser}
+						,#{createDate}
+						,#{updateUser}
+						,#{updateDate}
+				)
+	</insert>
+	
+	<update id="deleteRecord" parameterType="com.xtb.so.member.persistence.entities.SoAccount">
+	update t_so_account
+		<set>
+		valid='0'
+ 		,UPDATE_USER = #{updateUser}
+		,UPDATE_DATE = SYSDATE()
+		</set> 
+	where
+		valid='1'
+		<if test="accountId!=null and accountId!=''">and  account_id=#{accountId}</if>
+		<if test="account!=null and account!=''">and  account=#{account}</if>
+		<if test="accountType!=null and accountType!=''">and  account_type=#{accountType}</if>
+		<if test="userId!=null and userId!=''">and  user_id=#{userId}</if>
+		<if test="isPersonal!=null and isPersonal!=''">and  is_personal=#{isPersonal}</if>
+		<if test="remark!=null and remark!=''">and  remark=#{remark}</if>
+		<if test="extend1!=null and extend1!=''">and  extend1=#{extend1}</if>
+		<if test="extend2!=null and extend2!=''">and  extend2=#{extend2}</if>
+		<if test="extend3!=null and extend3!=''">and  extend3=#{extend3}</if>
+		<if test="extend4!=null and extend4!=''">and  extend4=#{extend4}</if>
+		<if test="extend5!=null and extend5!=''">and  extend5=#{extend5}</if>
+		<if test="extend6!=null and extend6!=''">and  extend6=#{extend6}</if>
+		<if test="extend7!=null and extend7!=''">and  extend7=#{extend7}</if>
+		<if test="extend8!=null and extend8!=''">and  extend8=#{extend8}</if>
+		<if test="extend9!=null and extend9!=''">and  extend9=#{extend9}</if>
+		<if test="extend10!=null and extend10!=''">and  extend10=#{extend10}</if>
+		<if test="valid!=null and valid!=''">and  valid=#{valid}</if>
+		<if test="createUser!=null and createUser!=''">and  create_user=#{createUser}</if>
+		<if test="createDate!=null and createDate!=''">and  create_date=#{createDate}</if>
+		<if test="updateUser!=null and updateUser!=''">and  update_user=#{updateUser}</if>
+		<if test="updateDate!=null and updateDate!=''">and  update_date=#{updateDate}</if>
+			</update>
+
+	<update id="deleteRecordByKey">
+		update t_so_account
+			<set>
+			valid='0'
+	 		,UPDATE_USER = #{updateUser}
+			,UPDATE_DATE = SYSDATE()
+			</set> 
+		where
+		 account_id=#{accountId} 
+	</update>
+
+</mapper>
