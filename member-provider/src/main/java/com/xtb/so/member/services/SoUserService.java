@@ -1,16 +1,16 @@
 package com.xtb.so.member.services;
 
-import java.util.List;
-import java.util.Map;
-
-import pers.tbsowa.common.dto.HandlerInfo;
-import pers.tbsowa.common.dto.SimplePage;
-
 import com.github.pagehelper.Page;
 import com.xtb.api.dto.in.RegUserDto;
 import com.xtb.api.dto.in.UpdUserDto;
+import com.xtb.api.dto.out.UserAccountDto;
 import com.xtb.so.member.persistence.entities.SoUser;
 import com.xtb.so.member.persistence.mappers.SoUserMapper;
+import pers.tbsowa.common.dto.HandlerInfo;
+import pers.tbsowa.common.dto.SimplePage;
+
+import java.util.List;
+import java.util.Map;
 
 public interface SoUserService {
 	
@@ -79,4 +79,17 @@ public interface SoUserService {
 	 * @throws Exception
 	 */
 	public boolean updUser(UpdUserDto updUserDto,HandlerInfo handlerInfo) throws Exception;
+
+	/**
+	 * 通过账号获取用户信息
+	 * @param account
+     */
+	public void findUserByAccount(String account);
+
+	/**
+	 * 获取用户账号信息
+	 * @param account
+	 * @return
+	 */
+	public UserAccountDto findUserAccount(String account) throws Exception;
 }

@@ -1,28 +1,31 @@
 package com.xtb.so.member.services.impl;
 
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import pers.tbsowa.common.dto.HandlerInfo;
-import pers.tbsowa.common.dto.SimplePage;
-import pers.tbsowa.common.utils.DateUtils;
-import pers.tbsowa.common.utils.KeyGeneratorUtils;
-
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.xtb.api.dto.in.RegUserDto;
 import com.xtb.api.dto.in.UpdUserDto;
+import com.xtb.api.dto.out.UserAccountDto;
+import com.xtb.so.common.ErrorConstants;
 import com.xtb.so.common.SoConstants;
+import com.xtb.so.exceptions.UserException;
 import com.xtb.so.member.persistence.entities.SoAccount;
 import com.xtb.so.member.persistence.entities.SoUser;
 import com.xtb.so.member.persistence.mappers.SoUserMapper;
 import com.xtb.so.member.services.SoAccountService;
 import com.xtb.so.member.services.SoUserService;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import pers.tbsowa.common.dto.HandlerInfo;
+import pers.tbsowa.common.dto.SimplePage;
+import pers.tbsowa.common.utils.BeanMapConvertUtils;
+import pers.tbsowa.common.utils.DateUtils;
+import pers.tbsowa.common.utils.KeyGeneratorUtils;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Service
 public class SoUserServiceImpl implements SoUserService {
@@ -168,5 +171,35 @@ public class SoUserServiceImpl implements SoUserService {
 		souser.setUpdateDate(DateUtils.sysDate());
 		this.updateRecord(souser);
 		return false;
+	}
+
+	@Override
+	public void findUserByAccount(String account) {
+		SoAccount soaccount = new SoAccount();
+		soaccount.setAccount(account);
+		List<SoAccount> soAccounts = soAccountService.queryByEntitys(soaccount);
+		if(soAccounts != null && !soAccounts.isEmpty()){
+			if(soAccounts.size() == 1){
+				SoAccount soAccount = soAccounts.get(0);
+
+			}
+		}
+	}
+
+	@Override
+	public UserAccountDto findUserAccount(String account) throws Exception {
+		UserAccountDto userAccountDto = null;
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("account",account);
+		List<Map<String, Object>> maps = _SoUserMapper.findUserAccount(map);
+		if(maps != null && !maps.isEmpty()){
+			if(maps.size() == 1){
+				Map<String, Object> mp = maps.get(0);
+				userAccountDto = BeanMapConvertUtils.mapToBean(mp,UserAccountDto.class);
+			}else{
+				throw new UserException(ErrorConstants.SOUS007);
+			}
+		}
+		return userAccountDto;
 	}
 }

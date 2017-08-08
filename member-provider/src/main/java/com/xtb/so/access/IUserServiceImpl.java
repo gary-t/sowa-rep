@@ -1,5 +1,7 @@
 package com.xtb.so.access;
 
+import com.xtb.so.common.ErrorConstants;
+import com.xtb.so.exceptions.UserException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,17 +23,17 @@ public class IUserServiceImpl implements IUserService {
 	@Override
 	public boolean addUser(RegUserDto regUserDto) throws Exception {
 		if(regUserDto == null){
-			throw new Exception("E001:注册用户信息为空");
+			throw new UserException(ErrorConstants.SOUS001);
 		}
 		if(StringUtils.isBlank(regUserDto.getAccount())){
-			throw new Exception("E002:注册用户账户为空");
+			throw new UserException(ErrorConstants.SOUS002);
 		}
 		if(!SoConstants.SO_ACCOUNTTYPE_MOBILE.equals(regUserDto.getAccountType())
 				&& !SoConstants.SO_ACCOUNTTYPE_EMAIL.equals(regUserDto.getAccountType())){
-			throw new Exception("E003:注册账号类型错误");
+			throw new UserException(ErrorConstants.SOUS003);
 		}
 		if(StringUtils.isBlank(regUserDto.getUserPassword())){
-			throw new Exception("E004:密码为空");
+			throw new UserException(ErrorConstants.SOUS004);
 		}
 		return soUserService.addUser(regUserDto);
 	}
@@ -39,10 +41,10 @@ public class IUserServiceImpl implements IUserService {
 	@Override
 	public boolean updUser(UpdUserDto updUserDto,HandlerInfo handlerInfo) throws Exception {
 		if(updUserDto == null){
-			throw new Exception("E005:更新用户信息为空");
+			throw new UserException(ErrorConstants.SOUS005);
 		}
 		if(StringUtils.isBlank(updUserDto.getUserId())){
-			throw new Exception("E006:用户编号为空");
+			throw new UserException(ErrorConstants.SOUS006);
 		}
 		return soUserService.updUser(updUserDto,handlerInfo);
 	}

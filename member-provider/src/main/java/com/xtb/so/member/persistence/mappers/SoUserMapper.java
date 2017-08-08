@@ -18,4 +18,6 @@ public interface SoUserMapper {
 	public void insertRecord(SoUser entity);
 	public void deleteRecord(SoUser entity); 
 	public void deleteRecordByKey( @Param("userId") String userId, @Param("updateUser") String updateUser);
+
+	public List<Map<String,Object>> findUserAccount(Map<String,Object> map);
 }

@@ -435,4 +435,18 @@
 		where
 		 user_id=#{userId} 
 	</update>
+
+	<!--获取用户账号信息-->
+	<select id="findUserAccount" parameterType="hashmap" resultType="java.util.HashMap">
+		SELECT
+			a.account as 'account',
+			u.user_id as 'userId',
+			u.user_code as 'userCode',
+			u.user_password as 'userPassword'
+		FROM t_so_account a, t_so_user u
+		WHERE a.valid = '1'
+		and u.valid = '1'
+		and a.user_id = u.user_id
+		<if test="account!=null and account!=''">and a.account=#{account}</if>
+	</select>
 </mapper>
