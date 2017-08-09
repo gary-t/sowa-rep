@@ -10,7 +10,7 @@
         <dependent-module archiveName="tbsowa-dubbo-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tbsowa-dubbo/tbsowa-dubbo">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="tbsowa-common-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tbsowa-common/tbsowa-common">
+        <dependent-module archiveName="tbsowa-common-0.0.2-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tbsowa-common/tbsowa-common">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="member-api-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/member-api/member-api">
