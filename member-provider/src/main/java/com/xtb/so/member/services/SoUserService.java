@@ -81,15 +81,8 @@ public interface SoUserService {
 	public boolean updUser(UpdUserDto updUserDto,HandlerInfo handlerInfo) throws Exception;
 
 	/**
-	 * 通过账号获取用户信息
+	 * 通过账号获取用户账户信息
 	 * @param account
      */
-	public void findUserByAccount(String account);
-
-	/**
-	 * 获取用户账号信息
-	 * @param account
-	 * @return
-	 */
-	public UserAccountDto findUserAccount(String account) throws Exception;
+	public UserAccountDto findUserByAccount(String account) throws Exception;
 }

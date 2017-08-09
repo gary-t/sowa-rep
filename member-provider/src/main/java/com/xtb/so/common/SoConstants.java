@@ -9,4 +9,7 @@ public class SoConstants {
 	
 	/**用户状态：00-注册用户,05-待审核,10-审核通过成为会员,15-审核驳回*/
 	public static final String SO_USERSTATUS_00 = "00";
+
+	/**用户代码类型标识*/
+	public static final String SO_SEQ_TYPE = "souser";
 }

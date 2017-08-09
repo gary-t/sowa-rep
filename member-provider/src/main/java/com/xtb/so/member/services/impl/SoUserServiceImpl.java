@@ -5,11 +5,13 @@ import com.github.pagehelper.PageHelper;
 import com.xtb.api.dto.in.RegUserDto;
 import com.xtb.api.dto.in.UpdUserDto;
 import com.xtb.api.dto.out.UserAccountDto;
+import com.xtb.so.common.CodeGenerator;
 import com.xtb.so.common.ErrorConstants;
 import com.xtb.so.common.SoConstants;
 import com.xtb.so.exceptions.UserException;
 import com.xtb.so.member.persistence.entities.SoAccount;
 import com.xtb.so.member.persistence.entities.SoUser;
+import com.xtb.so.member.persistence.mappers.SoSequenceMapper;
 import com.xtb.so.member.persistence.mappers.SoUserMapper;
 import com.xtb.so.member.services.SoAccountService;
 import com.xtb.so.member.services.SoUserService;
@@ -39,6 +41,9 @@ public class SoUserServiceImpl implements SoUserService {
 	public SoUserMapper getMapper(){
 		return _SoUserMapper;
 	}
+
+	@Autowired
+	private SoSequenceMapper soSequenceMapper;
 	
 	/**
 	 * 查询
@@ -116,8 +121,8 @@ public class SoUserServiceImpl implements SoUserService {
 	@Transactional(rollbackFor=Exception.class)
 	public boolean addUser(RegUserDto regUserDto) throws Exception{
 		String userId = KeyGeneratorUtils.getUuid();
-		// TODO
-		String userCode = "";
+		// 用户代码生成
+		String userCode = CodeGenerator.userCode(soSequenceMapper.getNextSeq(SoConstants.SO_SEQ_TYPE));
 		// 1.生成账号
 		createAccount(regUserDto,userId,userCode);
 		// 2.添加用户信息
@@ -127,7 +132,7 @@ public class SoUserServiceImpl implements SoUserService {
 	
 	private void createAccount(RegUserDto regUserDto,String userId,String userCode) throws Exception{
 		// 1.生成系统账号
-		addSoAccount(userCode,SoConstants.SO_ACCOUNTTYPE_SYS,userId);
+//		addSoAccount(userCode,SoConstants.SO_ACCOUNTTYPE_SYS,userId);
 		// 2.生成注册账号
 		addSoAccount(regUserDto.getAccount(),regUserDto.getAccountType(),userId);
 	}
@@ -174,20 +179,7 @@ public class SoUserServiceImpl implements SoUserService {
 	}
 
 	@Override
-	public void findUserByAccount(String account) {
-		SoAccount soaccount = new SoAccount();
-		soaccount.setAccount(account);
-		List<SoAccount> soAccounts = soAccountService.queryByEntitys(soaccount);
-		if(soAccounts != null && !soAccounts.isEmpty()){
-			if(soAccounts.size() == 1){
-				SoAccount soAccount = soAccounts.get(0);
-
-			}
-		}
-	}
-
-	@Override
-	public UserAccountDto findUserAccount(String account) throws Exception {
+	public UserAccountDto findUserByAccount(String account) throws Exception {
 		UserAccountDto userAccountDto = null;
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("account",account);

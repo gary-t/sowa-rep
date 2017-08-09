@@ -1,5 +1,6 @@
 package com.xtb.so.access;
 
+import com.xtb.api.dto.out.UserAccountDto;
 import com.xtb.so.common.ErrorConstants;
 import com.xtb.so.exceptions.UserException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,14 @@ public class IUserServiceImpl implements IUserService {
 			throw new UserException(ErrorConstants.SOUS006);
 		}
 		return soUserService.updUser(updUserDto,handlerInfo);
+	}
+
+	@Override
+	public UserAccountDto findUserByAccount(String account) throws Exception{
+		if(StringUtils.isBlank(account)){
+			throw new UserException(ErrorConstants.SOUS008);
+		}
+		return soUserService.findUserByAccount(account);
 	}
 
 }

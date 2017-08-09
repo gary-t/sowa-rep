@@ -3,15 +3,14 @@ package com.xtb.so.common;
 /**
  * Created by DELL on 2017/8/8.
  */
-public enum ErrorConstants {
-    SOUS001("SOUS001","注册用户信息为空"),
-    SOUS002("SOUS001","注册用户账户为空"),
-    SOUS003("SOUS001","注册账号类型错误"),
-    SOUS004("SOUS001","密码为空"),
-    SOUS005("SOUS001","更新用户信息为空"),
-    SOUS006("SOUS001","用户编号为空"),
-    SOUS007("SOUS007","账号信息错误"),
-    SOUS008("SOUS008","账号为空"),
+public enum SiteErrorConstants {
+    SIUS001("SIUS001","账户为空"),
+    SIUS002("SIUS002","密码为空"),
+    SIUS003("SIUS003","账号类型为空"),
+    SIUS004("SIUS004","验证码为空"),
+    SIUS005("SIUS005","账号类型错误"),
+    SIUS006("SIUS006","账号类型错误"),
+    SIUS007("SIUS007","账户格式错误"),
     ;
 
     private String code;
@@ -33,7 +32,7 @@ public enum ErrorConstants {
         this.msg = msg;
     }
 
-    ErrorConstants(String code, String msg) {
+    SiteErrorConstants(String code, String msg) {
         this.code = code;
         this.msg = msg;
     }

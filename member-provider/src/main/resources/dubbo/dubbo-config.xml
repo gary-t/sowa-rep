@@ -19,4 +19,5 @@
 	<dubbo:protocol name="${dubbo.protocol.name}" port="${dubbo.protocol.port}" />
 	
 	<dubbo:service interface="com.xtb.api.DemoService" ref="demoServiceImpl" retries="0" timeout="6000" />
+	<dubbo:service interface="com.xtb.api.IUserService" ref="userServiceImpl" retries="0" timeout="6000" />
 </beans>
