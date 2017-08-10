@@ -9,14 +9,14 @@ import org.springframework.stereotype.Service;
 import pers.tbsowa.common.dto.HandlerInfo;
 
 import com.alibaba.dubbo.common.utils.StringUtils;
-import com.xtb.api.IUserService;
+import com.xtb.api.UserService;
 import com.xtb.api.dto.in.RegUserDto;
 import com.xtb.api.dto.in.UpdUserDto;
 import com.xtb.so.common.SoConstants;
 import com.xtb.so.member.services.SoUserService;
 
 @Service
-public class IUserServiceImpl implements IUserService {
+public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private SoUserService soUserService;

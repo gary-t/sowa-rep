@@ -12,6 +12,7 @@ public enum SiteErrorConstants {
     SIUS006("SIUS006","账号类型错误"),
     SIUS007("SIUS007","账户格式错误"),
     SIUS008("SIUS008","请输入正确的手机号"),
+    SIUS009("SIUS009","验证码错误"),
     ;
 
     private String code;

@@ -6,7 +6,7 @@ import pers.tbsowa.common.dto.HandlerInfo;
 import com.xtb.api.dto.in.RegUserDto;
 import com.xtb.api.dto.in.UpdUserDto;
 
-public interface IUserService {
+public interface UserService {
 
 	public boolean addUser(RegUserDto regUserDto) throws Exception;
 	

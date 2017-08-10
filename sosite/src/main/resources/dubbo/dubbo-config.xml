@@ -13,5 +13,5 @@
    	<dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}" />
 
 	<dubbo:reference id="demoService" interface="com.xtb.api.DemoService"/>
-	<dubbo:reference id="userService" interface="com.xtb.api.IUserService"/>
+	<dubbo:reference id="userService" interface="com.xtb.api.UserService"/>
 </beans>

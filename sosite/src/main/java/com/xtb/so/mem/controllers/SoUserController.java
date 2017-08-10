@@ -7,12 +7,15 @@ import com.xtb.so.common.SiteErrorConstants;
 import com.xtb.so.common.SiteUrlConstants;
 import com.xtb.so.exceptions.SoSiteException;
 import com.xtb.so.mem.rpc.SoUserRpcService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import pers.tbsowa.common.utils.RegexUtils;
+import pers.tbsowa.redis.utils.IRedisUtil;
 
 
 @Controller
@@ -36,6 +39,9 @@ public class SoUserController {
 		if(StringUtils.isBlank(regUserDto.getIdentifyingCode())){
 			throw new SoSiteException(SiteErrorConstants.SIUS004);
 		}
+		if(StringUtils.isBlank(regUserDto.getIdentifyingKey())){
+			throw new SoSiteException(SiteErrorConstants.SIUS009);
+		}
 		if(!SiteConstants.ACCOUNT_TYPE_MOBILE.equals(regUserDto.getAccountType()) &&
 				!SiteConstants.ACCOUNT_TYPE_EMAIL.equals(regUserDto.getAccountType())){
 			throw new SoSiteException(SiteErrorConstants.SIUS005);
@@ -50,6 +56,8 @@ public class SoUserController {
 
 		}
 
+//		IRedisUtil.get(regUserDto.getIdentifyingKey());
+		
 		return souserservice.addUser(regUserDto);
 	}
 	

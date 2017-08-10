@@ -1,6 +1,6 @@
 package com.xtb.so.mem.rpc.impl;
 
-import com.xtb.api.IUserService;
+import com.xtb.api.UserService;
 import com.xtb.api.dto.in.RegUserDto;
 import com.xtb.api.dto.in.UpdUserDto;
 import com.xtb.api.dto.out.UserAccountDto;
@@ -14,18 +14,18 @@ import pers.tbsowa.common.dto.HandlerInfo;
 public class SoUserRpcServiceImpl implements SoUserRpcService {
 
     @Autowired
-    private IUserService iUserService;
+    private UserService userService;
 
     public boolean addUser(RegUserDto regUserDto) throws Exception{
-        return iUserService.addUser(regUserDto);
+        return userService.addUser(regUserDto);
     }
 
     public boolean updUser(UpdUserDto updUserDto, HandlerInfo handlerInfo) throws Exception{
-        return iUserService.updUser(updUserDto,handlerInfo);
+        return userService.updUser(updUserDto,handlerInfo);
     }
 
     public UserAccountDto findUserByAccount(String account) throws Exception{
-        return iUserService.findUserByAccount(account);
+        return userService.findUserByAccount(account);
     }
 
 }
