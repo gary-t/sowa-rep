@@ -15,14 +15,14 @@
 	<link href="../base/css/font-awesome.min.css" rel="stylesheet">
 	<link href="../components/bootstrapvalidator/css/bootstrapValidator.min.css" rel="stylesheet" />
 	
-	
 	<!-- Google Fonts -->
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" />
+	<!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" /> -->
 	
 
 	<!-- Colors -->
 	<link href="../base/css/css-index.css" rel="stylesheet" media="screen">
 
+	<link href="../base/css/mycss.css" rel="stylesheet"/>
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -75,12 +75,55 @@
 								<div class="form-group last">
 									<input id="loginbtn" type="submit" class="btn btn-warning btn-block btn-lg" value="LOGIN">
 								</div>
-								<p class="privacy text-center">We will not share your email. Read our <a href="privacy.html">privacy policy</a>.</p>
+								
+								<p class="privacy text-right"><a href="#" data-toggle="modal" data-target="#myModal2">立即注册</a></p>
 							</form>
 						</div>				
 					
 					</div>
 				</div>
+				
+				  <div id="myModal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+				    <div class="modal-dialog fadeInUp" role="document">
+				      <div class="modal-content">
+				        <div class="modal-header">
+				          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				          <h4 class="modal-title" id="myModalLabel2">用户注册</h4>
+				        </div>
+				        <div class="modal-body" style="padding: 30px 30px 5px;">
+				        	<div class="form-group">
+					        	<form class="bs-example bs-example-form" role="form">
+											<div class="input-group input-group-lg">
+												<span class="input-group-addon">手机号</span>
+												<input class="form-control input-lg" style="font-size: 16px;" name="acc" id="acc" type="text" placeholder="请输入正确的手机号" required>
+											</div><br>
+											<div class="input-group input-group-lg">
+												<span class="input-group-addon">验证码</span>
+												<input class="form-control input-lg" style="width: 260px;font-size: 16px;" name="acc" id="acc" type="text" placeholder="请输入验证码" required>
+												<img src="../images/logo.png" class="img-rounded" style="width: 185px;height: 46px;">
+											</div><br>
+											<div class="input-group input-group-lg">
+												<span class="input-group-addon">手机验证码</span>
+												<input class="form-control input-lg" style="width: 223px;font-size: 16px;" name="acc" id="acc" type="text" placeholder="请输入手机验证码" required>
+												<input class="btn btn-secondary btn-block btn-lg" style="width: 192px;height: 46px;font-size: 16px;" value="获取验证码">
+											</div><br>
+											<div class="input-group input-group-lg">
+												<span class="input-group-addon">设置密码</span>
+												<input class="form-control input-lg" style="font-size: 16px;" name="acc" id="acc" type="password" placeholder="建议至少使用两种字符组合" required>
+											</div><br>
+											<div class="input-group input-group-lg">
+												<span class="input-group-addon">确认密码</span>
+												<input class="form-control input-lg" style="font-size: 16px;" name="acc" id="acc" type="password" placeholder="请再次输入密码" required>
+											</div><br>
+										</form>
+				        	</div>
+				        	<div class="form-group last">
+										<input id="loginbtn" type="submit" class="btn btn-secondary btn-block btn-lg" value="立即注册">
+									</div>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
 			</div> 
 		</div> 
 	</div>
