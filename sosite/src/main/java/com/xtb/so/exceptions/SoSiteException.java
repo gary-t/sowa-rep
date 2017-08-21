@@ -7,7 +7,9 @@ import com.xtb.so.common.SiteErrorConstants;
  */
 public class SoSiteException extends Exception{
 
-    private String code;
+	private static final long serialVersionUID = 1L;
+	
+	private String code;
     private String errorMsg;
 
     public String getCode() {

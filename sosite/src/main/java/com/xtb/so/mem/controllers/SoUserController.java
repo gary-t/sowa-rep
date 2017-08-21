@@ -1,21 +1,18 @@
 package com.xtb.so.mem.controllers;
 
-import com.alibaba.dubbo.common.utils.StringUtils;
 import com.xtb.api.dto.in.RegUserDto;
 import com.xtb.so.common.SiteConstants;
 import com.xtb.so.common.SiteErrorConstants;
 import com.xtb.so.common.SiteUrlConstants;
 import com.xtb.so.exceptions.SoSiteException;
 import com.xtb.so.mem.rpc.SoUserRpcService;
-
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import pers.tbsowa.common.utils.RegexUtils;
-import pers.tbsowa.redis.utils.IRedisUtil;
 
 
 @Controller

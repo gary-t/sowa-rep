@@ -6,9 +6,12 @@ package com.xtb.so.common;
 public class SiteUrlConstants {
 
 	/**获取图片验证码*/
-	public static final  String SITE_USER_KAPTCHA = "/site/getKaptcha";
+	public static final String SITE_USER_KAPTCHA = "/site/getKaptcha";
+	
+	/**获取短信验证码*/
+	public static final String SITE_USER_GETSMSCODE = "/site/getSmsCode";
 	
     /**注册用户*/
-    public static final  String SITE_USER_ADDUSER = "/site/adduser";
+    public static final String SITE_USER_ADDUSER = "/site/adduser";
 
 }

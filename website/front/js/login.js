@@ -1,6 +1,46 @@
-require(["jquery"],function($){
-console.log($)
+//require(["jquery"],function($){
 	$(function(){
+		
+		var vue = new Vue({
+	      el: '#myModal2',
+	      data: {
+	      },
+	      methods: {
+	      	// msm code
+	      	getSmsCode: function(){
+	      		$.ajax({
+	            	type:"POST",
+//	            	url:paths.website_url + "site/getSmsCode",
+					url:"http://127.0.0.1:8081/site/getSmsCode",
+	            	data:{
+	            		"phone":$("#mobile").val(),
+	            	},
+	            	dataType: "json",
+	            	success:function(data){
+	            		console.log(data);
+	            	}
+	            });
+	      	},
+	      	// kapctha
+	      	getKapctha: function(){
+	      		$.ajax({
+	            	type:"GET",
+//	            	url:paths.website_url + "site/getKaptcha?date="+new Date()*1,
+					url:"http://127.0.0.1:8081/site/getKaptcha?date="+new Date()*1,
+	            	dataType: "json",
+	            	success:function(data){
+	            		console.log(data);
+	            		if(data.success){
+	            			$("#kapctha").attr("src","data:image/jpeg;base64,"+data.data.identifyCode);
+	            		}
+	            	}
+	            });
+	      	}
+	      }
+	    });
+		
+		vue.getKapctha();
+		
 		// validate form
 	    $("form.required-validate").each(function() {
 	        var $form = $(this);
@@ -52,8 +92,11 @@ console.log($)
 	
 	
 	    });
+	    
 		
 	});
+	
+	
 
-});
+//});
 

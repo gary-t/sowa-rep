@@ -7,3 +7,15 @@ dubbo:
   registry:
     protocol: zookeeper
     address: 127.0.0.1:2181
+    
+spring:
+  redis:
+    database: 0
+    hostName: 127.0.0.1
+    port: 6379  
+    pool:
+      max-active: 8  
+      max-wait: -1  
+      max-idle: 8  
+      min-idle: 0  
+    timeout: 0

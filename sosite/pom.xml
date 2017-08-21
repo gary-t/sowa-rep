@@ -4,51 +4,58 @@
   <artifactId>sosite</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  
-  
+
+  <name>sosite</name>
+
   <parent>
     <groupId>pers.tbsowa.root</groupId>
     <artifactId>tbsowa-root</artifactId>
     <version>0.0.1-RELEASE</version>
   </parent>
-  
+
  <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <dependencies>
-	<dependency>
-  		  <groupId>pers.tbsowa.dubbo</groupId>
-		  <artifactId>tbsowa-dubbo</artifactId>
-		  <version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  	    
-    <!-- member-api -->
-    <dependency>
-      <groupId>com.xtb</groupId>
-	  <artifactId>member-api</artifactId>
-	  <version>0.0.1-SNAPSHOT</version>
-    </dependency>
+      <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-lang3</artifactId>
+          <version>3.6</version>
+      </dependency>
 
       <dependency>
           <groupId>pers.tbsowa.common</groupId>
           <artifactId>tbsowa-common</artifactId>
-          <version>0.0.2-SNAPSHOT</version>
+          <version>0.0.3-SNAPSHOT</version>
       </dependency>
+	<dependency>
+  		  <groupId>pers.tbsowa.dubbo</groupId>
+		  <artifactId>tbsowa-dubbo</artifactId>
+		  <version>0.0.2-SNAPSHOT</version>
+  	</dependency>
+
+    <!-- member-api -->
+    <dependency>
+          <groupId>com.xtb</groupId>
+          <artifactId>member-api</artifactId>
+          <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+
 
 	  <dependency>
 	  	  <groupId>pers.tbsowa.redis</groupId>
 		  <artifactId>tbsowa-redis</artifactId>
-		  <version>0.0.1-SNAPSHOT</version>
+		  <version>0.0.2-SNAPSHOT</version>
 	  </dependency>
-	  
-	  <dependency>  
-		    <groupId>com.github.penggle</groupId>  
+
+	  <dependency>
+		    <groupId>com.github.penggle</groupId>
 		    <artifactId>kaptcha</artifactId>
-		    <version>2.3.2</version>    
+		    <version>2.3.2</version>
 		</dependency>
   </dependencies>
-  
+
   <profiles>
   	<profile>
         <id>jdk-1.8</id>
@@ -71,7 +78,7 @@
 	             <artifactId>maven-compiler-plugin</artifactId>
 	             <version>3.1</version>
 	             <configuration>
-	                 <source>1.8</source>    
+	                 <source>1.8</source>
 	                 <target>1.8</target>
 	             </configuration>
 	       </plugin>
@@ -84,5 +91,4 @@
 			</plugin>
 	  </plugins>
 	</build>
-  <name>sosite</name>
 </project>

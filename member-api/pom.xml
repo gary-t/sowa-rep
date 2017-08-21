@@ -7,9 +7,9 @@
   
   <dependencies>
   	<dependency>
-	  <groupId>pers.tbsowa.common</groupId>
-	  <artifactId>tbsowa-common</artifactId>
-	  <version>0.0.1-SNAPSHOT</version>
+	    <groupId>pers.tbsowa.common</groupId>
+	    <artifactId>tbsowa-common</artifactId>
+        <version>0.0.3-SNAPSHOT</version>
   	</dependency>
   </dependencies>
 </project>

@@ -28,7 +28,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="member-api" target="1.7" />
+      <module name="member-api" target="1.5" />
       <module name="member-provider" target="1.8" />
       <module name="sosite" target="1.8" />
     </bytecodeTargetLevel>
