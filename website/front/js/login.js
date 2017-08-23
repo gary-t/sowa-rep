@@ -1,4 +1,4 @@
-//require(["jquery"],function($){
+require(["jquery","bootstrapValidator","vue"],function($,bootstrapValidator,Vue){
 	$(function(){
 		
 		var vue = new Vue({
@@ -98,5 +98,5 @@
 	
 	
 
-//});
+});
 

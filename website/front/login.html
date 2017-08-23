@@ -28,7 +28,7 @@
 ================================================== -->
   <body data-spy="scroll" data-target="#navbar-scroll">
 	<!-- /.parallax full screen background image -->
-	<div class="fullscreen landing parallax" style="background-image:url('../images/bg.jpg');" data-img-width="2000" data-img-height="1333" data-diff="100">
+	<div id="login" class="fullscreen landing parallax" style="background-image:url('../images/bg.jpg');" data-img-width="2000" data-img-height="1333" data-diff="100">
 		
 		<div class="overlay">
 			<div class="container">
@@ -51,7 +51,8 @@
 						<!-- /.header button -->
 						<div class="head-btn wow fadeInLeft">
 							<a href="#feature" class="btn-primary">Features</a>
-							<a href="#download" class="btn-default">Download</a>
+							<a href="#" class="btn-default"><router-link to="/foo">HOME</router-link></a>
+							<router-view></router-view>
 						</div>
 		
 			  
@@ -131,17 +132,17 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../components/jquery/jquery-3.2.1.min.js"></script>
+    <!--<script src="../components/jquery/jquery-3.2.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="../components/bootstrap-3.37/assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../components/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../components/bootstrap-3.3.7/js/bootstrap.min.js"></script>-->
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../components/bootstrap-3.3.7/assets/js/vendor/holder.min.js"></script>
+    <!--<script src="../components/bootstrap-3.3.7/assets/js/vendor/holder.min.js"></script>-->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../components/bootstrap-3.3.7/assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="../components/bootstrapvalidator/js/bootstrapValidator.min.js"></script>
+    <!--<script src="../components/bootstrap-3.3.7/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../components/bootstrapvalidator/js/bootstrapValidator.min.js"></script>-->
     
-    <script src="../components/vue/vue.min.js" type="text/javascript"></script>
-    <!--<script data-main="front" defer src="../components/require/require.js"></script>-->
-    <script src="js/login.js" type="text/javascript"></script>
+    <!--<script src="../components/vue/vue.min.js" type="text/javascript"></script>-->
+    <!--<script src="../components/require/require.js" type="text/javascript"></script>-->
+    <script data-main="login" defer async="async" src="../components/require/require.js"></script>
   </body>
 </html>
