@@ -67,6 +67,12 @@ require(["jquery","bootstrap","bootstrapValidator","vue","constants"],function($
 	   // doLogin
 	   doLogin: function(){
 	   		$('#loginForm').bootstrapValidator('validate');
+	   },
+	   // get sms code
+	   getMobileCapctha: function(){
+	   		$("#regForm").data("bootstrapValidator").validateField("mobile");
+	   		
+	   		
 	   }
       	
       }
