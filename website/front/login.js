@@ -71,8 +71,11 @@ require(["jquery","bootstrap","bootstrapValidator","vue","constants"],function($
 	   // get sms code
 	   getMobileCapctha: function(){
 	   		$("#regForm").data("bootstrapValidator").validateField("mobile");
-	   		
-	   		
+	   		$("#regForm").data("bootstrapValidator").validateField("yzm");
+	   		if($('#mobile').next().hasClass('glyphicon-ok')
+	   			&& $('#yzm').next().hasClass('glyphicon-ok')){
+	   			alert(1111);
+	   		}
 	   }
       	
       }
